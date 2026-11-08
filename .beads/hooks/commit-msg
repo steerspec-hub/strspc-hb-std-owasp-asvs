@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+# Conventional Commits gate: type(scope)!: subject
+# Local fast check; CI runs commitlint with .commitlintrc.yml as the authority.
+# git runs this from .beads/hooks because bd init sets core.hooksPath there.
+header=$(grep -v '^#' "$1" | sed -n '1p')
+case "$header" in
+  'Merge '*|'Revert "'*|'fixup! '*|'squash! '*|'amend! '*) exit 0 ;;
+esac
+types='build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test'
+if ! printf '%s\n' "$header" | grep -Eq "^($types)(\([^()]+\))?!?: [^ ]"; then
+  echo "commit-msg: not a Conventional Commit header: \"$header\"" >&2
+  echo "  expected: type(scope)!: subject   types: ${types}" | sed 's/|/ /g' >&2
+  exit 1
+fi
+if [ "${#header}" -gt 120 ]; then
+  echo "commit-msg: header is ${#header} chars (max 120)" >&2
+  exit 1
+fi
