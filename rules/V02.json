@@ -1,0 +1,352 @@
+{
+  "$schema": "./_schema/entity.v1.schema.json",
+  "entity": {
+    "id": "V02",
+    "title": "Validation and Business Logic"
+  },
+  "rule_set": {
+    "version": "0.1.23",
+    "timestamp": "2026-11-09T11:37:37Z",
+    "hash": "blake3:b1f281874212424f3e8ff05ea22b58da6ff3482ad26da673ee617321e50690c2"
+  },
+  "rules": [],
+  "sub_entities": [
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V02S01",
+        "title": "Validation and Business Logic Documentation",
+        "parent": "V02"
+      },
+      "rule_set": {
+        "version": "0.1.4",
+        "timestamp": "2026-11-09T11:37:37Z",
+        "hash": "blake3:981d4a0785edfafd40f7e127216e313d7c15c8382b6f1a5485f6dc8bda6990f0"
+      },
+      "rules": [
+        {
+          "id": "V02S01-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application's documentation defines input validation rules for how to check the validity of data items against an expected structure.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.1.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S01-002",
+          "revision": 0,
+          "state": "D",
+          "body": "This could be common data formats such as credit card numbers, email addresses, telephone numbers, or it could be an internal data format.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.1.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S01-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application's documentation defines how to validate the logical and contextual consistency of combined data items, such as checking that suburb and ZIP code match.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.1.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S01-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that expectations for business logic limits and validations are documented, including both per-user and globally across the application.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.1.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V02S02",
+        "title": "Input Validation",
+        "parent": "V02"
+      },
+      "rule_set": {
+        "version": "0.1.7",
+        "timestamp": "2026-11-09T11:37:37Z",
+        "hash": "blake3:5d08d61e32bc7ce957fc530a0f7a24f366ac729b485e54b3b0bb22508641052a"
+      },
+      "rules": [
+        {
+          "id": "V02S02-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that input is validated to enforce business or functional expectations for that input.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S02-002",
+          "revision": 0,
+          "state": "D",
+          "body": "This should either use positive validation against an allow list of values, patterns, and ranges, or be based on comparing the input to an expected structure and logical limits according to predefined rules.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S02-003",
+          "revision": 0,
+          "state": "D",
+          "body": "For L1, this can focus on input which is used to make specific business or security decisions.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S02-004",
+          "revision": 0,
+          "state": "D",
+          "body": "For L2 and up, this should apply to all input.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S02-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application is designed to enforce input validation at a trusted service layer.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S02-006",
+          "revision": 0,
+          "state": "D",
+          "body": "While client-side validation improves usability and should be encouraged, it must not be relied upon as a security control.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S02-007",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application ensures that combinations of related data items are reasonable according to the pre-defined rules.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.2.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V02S03",
+        "title": "Business Logic Security",
+        "parent": "V02"
+      },
+      "rule_set": {
+        "version": "0.1.6",
+        "timestamp": "2026-11-09T11:37:37Z",
+        "hash": "blake3:ea3cca3d0e98a838ca759f72e3e0ecaac93624683309e4c6c3005b54e3dbaaa4"
+      },
+      "rules": [
+        {
+          "id": "V02S03-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application will only process business logic flows for the same user in the expected sequential step order and without skipping steps.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.3.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S03-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that business logic limits are implemented per the application's documentation to avoid business logic flaws being exploited.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.3.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S03-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that transactions are being used at the business logic level such that either a business logic operation succeeds in its entirety or it is rolled back to the previous correct state.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.3.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S03-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that business logic level locking mechanisms are used to ensure that limited quantity resources (such as theater seats or delivery slots) cannot be double-booked by manipulating the application's logic.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.3.4",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S03-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that high-value business logic flows require multi-user approval to prevent unauthorized or accidental actions.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.3.5",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S03-006",
+          "revision": 0,
+          "state": "D",
+          "body": "This could include but is not limited to large monetary transfers, contract approvals, access to classified information, or safety overrides in manufacturing.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.3.5",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V02S04",
+        "title": "Anti-automation",
+        "parent": "V02"
+      },
+      "rule_set": {
+        "version": "0.1.2",
+        "timestamp": "2026-11-09T11:37:37Z",
+        "hash": "blake3:6b7b95b90c6dbadd2093b52dbb345de993f7bea6243ed6ea07ee06ec1a24d6f7"
+      },
+      "rules": [
+        {
+          "id": "V02S04-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that anti-automation controls are in place to protect against excessive calls to application functions that could lead to data exfiltration, garbage-data creation, quota exhaustion, rate-limit breaches, denial-of-service, or overuse of costly resources.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.4.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V02S04-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that business logic flows require realistic human timing, preventing excessively rapid transaction submissions.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V2.4.2",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "notes": []
+}
