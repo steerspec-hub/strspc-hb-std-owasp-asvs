@@ -25,7 +25,8 @@ jobs:
       # main, 2026-10-20 (SteerSpec/strspc-CLI#92), as in SteerSpec/.github's strspc-lint workflow
       - uses: SteerSpec/strspc-CLI/.github/actions/setup-strspc@1ce43e4484d9451083c0774a9926178889d684f2
         with:
-          version: latest
+          # Pinned so a CLI release can't change the checks without a change here.
+          version: 1.39.0
 
       - name: Validate realm
         run: strspc realm validate rules/ --recursive --strict

@@ -36,15 +36,33 @@ The realm follows the core Standard Realm rules (STDRLM) of `dev.steerspec.core`
 
 ## Using it
 
-Declare the realm as a dependency in your own `realm.json`, and link a Standard Reference to it:
+In your own `realm.json`, declare the realm as a dependency, and add a Standard Reference that links
+to it, with the level you claim:
 
 ```json
 {
-  "realm_id": "dev.steerspec.std.owasp.asvs.v5",
-  "version": "<release>",
-  "source": "github://steerspec-hub/strspc-hb-std-owasp-asvs@v<release>/rules"
+  "realm": {
+    "standards": [
+      {
+        "id": "owasp.asvs",
+        "version": "5.0.0",
+        "relation": "implements",
+        "realm": "dev.steerspec.std.owasp.asvs.v5",
+        "profile": "L1"
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "realm_id": "dev.steerspec.std.owasp.asvs.v5",
+      "version": "<release>",
+      "source": "github://steerspec-hub/strspc-hb-std-owasp-asvs@v<release>/rules"
+    }
+  ]
 }
 ```
+
+The rest of your manifest stays as it is; only these two parts change.
 
 Then `strspc standards coverage` reports which clauses your rules cover, which are mapped but not yet
 enforced, and which nobody mapped, against the clause total of your level.
