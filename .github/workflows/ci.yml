@@ -19,7 +19,9 @@ permissions:
 
 jobs:
   rules:
-    uses: SteerSpec/.github/.github/workflows/strspc-lint.yml@main
+    # Pinned to a commit of SteerSpec/.github (main, 2026-11-07), so an upstream change can't alter
+    # these checks without a change here.
+    uses: SteerSpec/.github/.github/workflows/strspc-lint.yml@0f165a7f7d88982e2594c67e7f8198770e286265
     permissions:
       contents: read
       pull-requests: read
