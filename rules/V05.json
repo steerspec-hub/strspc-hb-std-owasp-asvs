@@ -1,0 +1,336 @@
+{
+  "$schema": "./_schema/entity.v1.schema.json",
+  "entity": {
+    "id": "V05",
+    "title": "File Handling"
+  },
+  "rule_set": {
+    "version": "0.1.22",
+    "timestamp": "2026-11-09T11:37:38Z",
+    "hash": "blake3:8ec6c85a038de1daf6d65a188935ed1a34f1cbb1aca6dae960e8656ddca274ce"
+  },
+  "rules": [],
+  "sub_entities": [
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V05S01",
+        "title": "File Handling Documentation",
+        "parent": "V05"
+      },
+      "rule_set": {
+        "version": "0.1.2",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:96714be838202f95588606a232b55b8cfb7a12bd26b98fa4c3ced5ea9e7df40c"
+      },
+      "rules": [
+        {
+          "id": "V05S01-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the documentation defines the permitted file types, expected file extensions, and maximum size (including unpacked size) for each upload feature.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.1.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S01-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Additionally, ensure that the documentation specifies how files are made safe for end-users to download and process, such as how the application behaves when a malicious file is detected.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.1.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V05S02",
+        "title": "File Upload and Content",
+        "parent": "V05"
+      },
+      "rule_set": {
+        "version": "0.1.9",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:8a584b1791c853dfac96dd57f95720286b7e3d58ebb85b705b604d37ecde2ee7"
+      },
+      "rules": [
+        {
+          "id": "V05S02-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application will only accept files of a size which it can process without causing a loss of performance or a denial of service attack.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that when the application accepts a file, either on its own or within an archive such as a zip file, it checks if the file extension matches an expected file extension and validates that the contents correspond to the type represented by the extension.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-003",
+          "revision": 0,
+          "state": "D",
+          "body": "This includes, but is not limited to, checking the initial 'magic bytes', performing image re-writing, and using specialized libraries for file content validation.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-004",
+          "revision": 0,
+          "state": "D",
+          "body": "For L1, this can focus just on files which are used to make specific business or security decisions.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-005",
+          "revision": 0,
+          "state": "D",
+          "body": "For L2 and up, this must apply to all files being accepted.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-006",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application checks compressed files (e.g., zip, gz, docx, odt) against maximum allowed uncompressed size and against maximum number of files before uncompressing the file.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-007",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that a file size quota and maximum number of files per user are enforced to ensure that a single user cannot fill up the storage with too many files, or excessively large files.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.4",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-008",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application does not allow uploading compressed files containing symlinks unless this is specifically required (in which case it will be necessary to enforce an allowlist of the files that can be symlinked to).",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.5",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S02-009",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application rejects uploaded images with a pixel size larger than the maximum allowed, to prevent pixel flood attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.2.6",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V05S03",
+        "title": "File Storage",
+        "parent": "V05"
+      },
+      "rule_set": {
+        "version": "0.1.4",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:f2b0ee1e02ba663da575bb489288b87383b875defdd7c94105e9e8c69954491e"
+      },
+      "rules": [
+        {
+          "id": "V05S03-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that files uploaded or generated by untrusted input and stored in a public folder, are not executed as server-side program code when accessed directly with an HTTP request.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.3.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S03-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that when the application creates file paths for file operations, instead of user-submitted filenames, it uses internally generated or trusted data, or if user-submitted filenames or file metadata must be used, strict validation and sanitization must be applied.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.3.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S03-003",
+          "revision": 0,
+          "state": "D",
+          "body": "This is to protect against path traversal, local or remote file inclusion (LFI, RFI), and server-side request forgery (SSRF) attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.3.2",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S03-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that server-side file processing, such as file decompression, ignores user-provided path information to prevent vulnerabilities such as zip slip.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.3.3",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V05S04",
+        "title": "File Download",
+        "parent": "V05"
+      },
+      "rule_set": {
+        "version": "0.1.3",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:efd26111d457e29933ef72cb7b722ca12d523f72b356d12655b5597387554aee"
+      },
+      "rules": [
+        {
+          "id": "V05S04-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application validates or ignores user-submitted filenames, including in a JSON, JSONP, or URL parameter and specifies a filename in the Content-Disposition header field in the response.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.4.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S04-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that file names served (e.g., in HTTP response header fields or email attachments) are encoded or sanitized (e.g., following RFC 6266) to preserve document structure and prevent injection attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.4.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V05S04-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that files obtained from untrusted sources are scanned by antivirus scanners to prevent serving of known malicious content.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V5.4.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "notes": []
+}

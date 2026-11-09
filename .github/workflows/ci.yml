@@ -1,11 +1,12 @@
 name: CI
 
-# Validates the realm with the released strspc CLI.
+# Validates and lints the realm, and checks lifecycle transitions, with the
+# released strspc CLI, through SteerSpec/.github's reusable workflow.
 #
-# Until the realm holds entities, only the manifest can be checked: `strspc lint`
-# refuses a realm with no entity files (RL000). The pilot (#1) switches this job to
-# SteerSpec/.github's reusable strspc-lint workflow, which adds lint and the
-# lifecycle diff.
+# Not strict yet: core's key-word check (RL021) and its inline-example check
+# (RL026, NTE-020) are written for rules people author, and warn on every rule
+# here because the bodies are the standard's own text. Turn `strict` back on
+# once core exempts Standard Realms from them and strspc lint follows.
 
 on:
   push:
@@ -17,16 +18,21 @@ permissions:
   contents: read
 
 jobs:
-  realm:
+  rules:
+    uses: SteerSpec/.github/.github/workflows/strspc-lint.yml@main
+    permissions:
+      contents: read
+      pull-requests: read
+    with:
+      path: rules/
+      # Pinned so a CLI release can't change the checks without a change here.
+      cli-version: 1.40.0
+      strict: false
+
+  generator:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
 
-      # main, 2026-10-20 (SteerSpec/strspc-CLI#92), as in SteerSpec/.github's strspc-lint workflow
-      - uses: SteerSpec/strspc-CLI/.github/actions/setup-strspc@1ce43e4484d9451083c0774a9926178889d684f2
-        with:
-          # Pinned so a CLI release can't change the checks without a change here.
-          version: 1.39.0
-
-      - name: Validate realm
-        run: strspc realm validate rules/ --recursive --strict
+      - name: Check the generator compiles
+        run: python3 -m py_compile tools/generate.py tools/sentences.py

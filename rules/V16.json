@@ -1,0 +1,430 @@
+{
+  "$schema": "./_schema/entity.v1.schema.json",
+  "entity": {
+    "id": "V16",
+    "title": "Security Logging and Error Handling"
+  },
+  "rule_set": {
+    "version": "0.1.29",
+    "timestamp": "2026-11-09T11:37:43Z",
+    "hash": "blake3:ef197177a8f95daaa5b37fd2caf34d0ed3327ab5bf34777cbbab4f4376c116a4"
+  },
+  "rules": [],
+  "sub_entities": [
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V16S01",
+        "title": "Security Logging Documentation",
+        "parent": "V16"
+      },
+      "rule_set": {
+        "version": "0.1.1",
+        "timestamp": "2026-11-09T11:37:43Z",
+        "hash": "blake3:26829050f5c72ce343292b4e074720eae81e663a850e0a79a5be839bee640aa4"
+      },
+      "rules": [
+        {
+          "id": "V16S01-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that an inventory exists documenting the logging performed at each layer of the application's technology stack, what events are being logged, log formats, where that logging is stored, how it is used, how access to it is controlled, and for how long logs are kept.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.1.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V16S02",
+        "title": "General Logging",
+        "parent": "V16"
+      },
+      "rule_set": {
+        "version": "0.1.8",
+        "timestamp": "2026-11-09T11:37:43Z",
+        "hash": "blake3:523aff11d90c829d0da5c5cc3a4592dbdf668c626b041c5f04b7840c095b6d38"
+      },
+      "rules": [
+        {
+          "id": "V16S02-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that each log entry includes necessary metadata (such as when, where, who, what) that would allow for a detailed investigation of the timeline when an event happens.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that time sources for all logging components are synchronized, and that timestamps in security event metadata use UTC or include an explicit time zone offset.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-003",
+          "revision": 0,
+          "state": "D",
+          "body": "UTC is recommended to ensure consistency across distributed systems and to prevent confusion during daylight saving time transitions.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application only stores or broadcasts logs to the files and services that are documented in the log inventory.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that logs can be read and correlated by the log processor that is in use, preferably by using a common logging format.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.4",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-006",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that when logging sensitive data, the application enforces logging based on the data's protection level.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.5",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-007",
+          "revision": 0,
+          "state": "D",
+          "body": "For example, it may not be allowed to log certain data, such as credentials or payment details.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.5",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S02-008",
+          "revision": 0,
+          "state": "D",
+          "body": "Other data, such as session tokens, may only be logged by being hashed or masked, either in full or partially.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.2.5",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V16S03",
+        "title": "Security Events",
+        "parent": "V16"
+      },
+      "rule_set": {
+        "version": "0.1.6",
+        "timestamp": "2026-11-09T11:37:43Z",
+        "hash": "blake3:9e402d3b6a707be47061a9125a4241a85e8ac476efd4492226524eb8fcdaa548"
+      },
+      "rules": [
+        {
+          "id": "V16S03-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that all authentication operations are logged, including successful and unsuccessful attempts.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.3.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S03-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Additional metadata, such as the type of authentication or factors used, should also be collected.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.3.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S03-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that failed authorization attempts are logged.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.3.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S03-004",
+          "revision": 0,
+          "state": "D",
+          "body": "For L3, this must include logging all authorization decisions, including logging when sensitive data is accessed (without logging the sensitive data itself).",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.3.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S03-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application logs the security events that are defined in the documentation and also logs attempts to bypass the security controls, such as input validation, business logic, and anti-automation.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.3.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S03-006",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application logs unexpected errors and security control failures such as backend TLS failures.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.3.4",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V16S04",
+        "title": "Log Protection",
+        "parent": "V16"
+      },
+      "rule_set": {
+        "version": "0.1.4",
+        "timestamp": "2026-11-09T11:37:43Z",
+        "hash": "blake3:dcc9535859916365b945a2c41fa62fcf1ba038d1bc3909e79768b94a87ba4cd2"
+      },
+      "rules": [
+        {
+          "id": "V16S04-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that all logging components appropriately encode data to prevent log injection.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.4.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S04-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that logs are protected from unauthorized access and cannot be modified.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.4.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S04-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that logs are securely transmitted to a logically separate system for analysis, detection, alerting, and escalation.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.4.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S04-004",
+          "revision": 0,
+          "state": "D",
+          "body": "The aim is to ensure that if the application is breached, the logs are not compromised.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.4.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V16S05",
+        "title": "Error Handling",
+        "parent": "V16"
+      },
+      "rule_set": {
+        "version": "0.1.5",
+        "timestamp": "2026-11-09T11:37:43Z",
+        "hash": "blake3:30d0109e70028fdc8699f8686c37f0b9a0ff8ae6b0249f2ba1f09dacc5361f26"
+      },
+      "rules": [
+        {
+          "id": "V16S05-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that a generic message is returned to the consumer when an unexpected or security-sensitive error occurs, ensuring no exposure of sensitive internal system data such as stack traces, queries, secret keys, and tokens.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.5.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S05-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application continues to operate securely when external resource access fails, for example, by using patterns such as circuit breakers or graceful degradation.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.5.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S05-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application fails gracefully and securely, including when an exception occurs, preventing fail-open conditions such as processing a transaction despite errors resulting from validation logic.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.5.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S05-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that a \"last resort\" error handler is defined which will catch all unhandled exceptions.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.5.4",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V16S05-005",
+          "revision": 0,
+          "state": "D",
+          "body": "This is both to avoid losing error details that must go to log files and to ensure that an error does not take down the entire application process, leading to a loss of availability.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V16.5.4",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "notes": []
+}

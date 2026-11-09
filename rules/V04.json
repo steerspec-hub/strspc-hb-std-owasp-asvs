@@ -1,0 +1,369 @@
+{
+  "$schema": "./_schema/entity.v1.schema.json",
+  "entity": {
+    "id": "V04",
+    "title": "API and Web Service"
+  },
+  "rule_set": {
+    "version": "0.1.25",
+    "timestamp": "2026-11-09T11:37:38Z",
+    "hash": "blake3:0aa8807d983524db2c4911071f9e93e9a6a38109609e15b1f726ad3dba3dc4c2"
+  },
+  "rules": [],
+  "sub_entities": [
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V04S01",
+        "title": "Generic Web Service Security",
+        "parent": "V04"
+      },
+      "rule_set": {
+        "version": "0.1.7",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:fb817041200fcf07dfdd1a7d326a90f7acc75225f0d96b10d1d87e37a451c1d9"
+      },
+      "rules": [
+        {
+          "id": "V04S01-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that every HTTP response with a message body contains a Content-Type header field that matches the actual content of the response, including the charset parameter to specify safe character encoding (e.g., UTF-8, ISO-8859-1) according to IANA Media Types, such as \"text/\", \"/+xml\" and \"/xml\".",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S01-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that only user-facing endpoints (intended for manual web-browser access) automatically redirect from HTTP to HTTPS, while other services or endpoints do not implement transparent redirects.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S01-003",
+          "revision": 0,
+          "state": "D",
+          "body": "This is to avoid a situation where a client is erroneously sending unencrypted HTTP requests, but since the requests are being automatically redirected to HTTPS, the leakage of sensitive data goes undiscovered.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S01-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that any HTTP header field used by the application and set by an intermediary layer, such as a load balancer, a web proxy, or a backend-for-frontend service, cannot be overridden by the end-user.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S01-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Example headers might include X-Real-IP, X-Forwarded-*, or X-User-ID.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S01-006",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that only HTTP methods that are explicitly supported by the application or its API (including OPTIONS during preflight requests) can be used and that unused methods are blocked.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.4",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S01-007",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that per-message digital signatures are used to provide additional assurance on top of transport protections for requests or transactions which are highly sensitive or which traverse a number of systems.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.1.5",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V04S02",
+        "title": "HTTP Message Structure Validation",
+        "parent": "V04"
+      },
+      "rule_set": {
+        "version": "0.1.8",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:d2bad7ece1f6908954546568e8e2b1905a8a9f0085fa04c6769df0d059a4ea00"
+      },
+      "rules": [
+        {
+          "id": "V04S02-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that all application components (including load balancers, firewalls, and application servers) determine boundaries of incoming HTTP messages using the appropriate mechanism for the HTTP version to prevent HTTP request smuggling.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-002",
+          "revision": 0,
+          "state": "D",
+          "body": "In HTTP/1.x, if a Transfer-Encoding header field is present, the Content-Length header must be ignored per RFC 2616.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-003",
+          "revision": 0,
+          "state": "D",
+          "body": "When using HTTP/2 or HTTP/3, if a Content-Length header field is present, the receiver must ensure that it is consistent with the length of the DATA frames.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that when generating HTTP messages, the Content-Length header field does not conflict with the length of the content as determined by the framing of the HTTP protocol, in order to prevent request smuggling attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.2",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application does not send nor accept HTTP/2 or HTTP/3 messages with connection-specific header fields such as Transfer-Encoding to prevent response splitting and header injection attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.3",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-006",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application only accepts HTTP/2 and HTTP/3 requests where the header fields and values do not contain any CR (\\r), LF (\\n), or CRLF (\\r\\n) sequences, to prevent header injection attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.4",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-007",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that, if the application (backend or frontend) builds and sends requests, it uses validation, sanitization, or other mechanisms to avoid creating URIs (such as for API calls) or HTTP request header fields (such as Authorization or Cookie), which are too long to be accepted by the receiving component.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.5",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S02-008",
+          "revision": 0,
+          "state": "D",
+          "body": "This could cause a denial of service, such as when sending an overly long request (e.g., a long cookie header field), which results in the server always responding with an error status.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.2.5",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V04S03",
+        "title": "GraphQL",
+        "parent": "V04"
+      },
+      "rule_set": {
+        "version": "0.1.2",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:ceb29e84c5f88b4c436564737e48242b9fc0b696c61884800223d14f06325262"
+      },
+      "rules": [
+        {
+          "id": "V04S03-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that a query allowlist, depth limiting, amount limiting, or query cost analysis is used to prevent GraphQL or data layer expression Denial of Service (DoS) as a result of expensive, nested queries.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.3.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S03-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that GraphQL introspection queries are disabled in the production environment unless the GraphQL API is meant to be used by other parties.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.3.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V04S04",
+        "title": "WebSocket",
+        "parent": "V04"
+      },
+      "rule_set": {
+        "version": "0.1.4",
+        "timestamp": "2026-11-09T11:37:38Z",
+        "hash": "blake3:7696a0a9dd61189b0abaf0541d28746be3cd402af7350aaffc1285770f7fd48a"
+      },
+      "rules": [
+        {
+          "id": "V04S04-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that WebSocket over TLS (WSS) is used for all WebSocket connections.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.4.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S04-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that, during the initial HTTP WebSocket handshake, the Origin header field is checked against a list of origins allowed for the application.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.4.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S04-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that, if the application's standard session management cannot be used, dedicated tokens are being used for this, which comply with the relevant Session Management security requirements.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.4.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V04S04-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that dedicated WebSocket session management tokens are initially obtained or validated through the previously authenticated HTTPS session when transitioning an existing HTTPS session to a WebSocket channel.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V4.4.4",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "notes": []
+}

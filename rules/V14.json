@@ -1,0 +1,353 @@
+{
+  "$schema": "./_schema/entity.v1.schema.json",
+  "entity": {
+    "id": "V14",
+    "title": "Data Protection"
+  },
+  "rule_set": {
+    "version": "0.1.24",
+    "timestamp": "2026-11-09T11:37:42Z",
+    "hash": "blake3:96a098e35bd5a63e4858c4055e44dedc6ed83747c0eba24582824a8e9081b485"
+  },
+  "rules": [],
+  "sub_entities": [
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V14S01",
+        "title": "Data Protection Documentation",
+        "parent": "V14"
+      },
+      "rule_set": {
+        "version": "0.1.5",
+        "timestamp": "2026-11-09T11:37:42Z",
+        "hash": "blake3:721143c07a1a5fbf16e68430fad01940403735adee146da4a23a948550976303"
+      },
+      "rules": [
+        {
+          "id": "V14S01-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that all sensitive data created and processed by the application has been identified and classified into protection levels.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.1.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S01-002",
+          "revision": 0,
+          "state": "D",
+          "body": "This includes data that is only encoded and therefore easily decoded, such as Base64 strings or the plaintext payload inside a JWT.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.1.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S01-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Protection levels need to take into account any data protection and privacy regulations and standards which the application is required to comply with.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.1.1",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S01-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that all sensitive data protection levels have a documented set of protection requirements.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.1.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S01-005",
+          "revision": 0,
+          "state": "D",
+          "body": "This must include (but not be limited to) requirements related to general encryption, integrity verification, retention, how the data is to be logged, access controls around sensitive data in logs, database-level encryption, privacy and privacy-enhancing technologies to be used, and other confidentiality requirements.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.1.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V14S02",
+        "title": "General Data Protection",
+        "parent": "V14"
+      },
+      "rule_set": {
+        "version": "0.1.12",
+        "timestamp": "2026-11-09T11:37:42Z",
+        "hash": "blake3:a42d4c6846926c2c76fdc94d70c65ba4f6d79bda92211f2cea527134390df7f3"
+      },
+      "rules": [
+        {
+          "id": "V14S02-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that sensitive data is only sent to the server in the HTTP message body or header fields, and that the URL and query string do not contain sensitive information, such as an API key or session token.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-002",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application prevents sensitive data from being cached in server components, such as load balancers and application caches, or ensures that the data is securely purged after use.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that defined sensitive data is not sent to untrusted parties (e.g., user trackers) to prevent unwanted collection of data outside of the application's control.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that controls around sensitive data related to encryption, integrity verification, retention, how the data is to be logged, access controls around sensitive data in logs, privacy and privacy-enhancing technologies, are implemented as defined in the documentation for the specific data's protection level.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.4",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-005",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that caching mechanisms are configured to only cache responses which have the expected content type for that resource and do not contain sensitive, dynamic content.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.5",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-006",
+          "revision": 0,
+          "state": "D",
+          "body": "The web server should return a 404 or 302 response when a non-existent file is accessed rather than returning a different, valid file.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.5",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-007",
+          "revision": 0,
+          "state": "D",
+          "body": "This should prevent Web Cache Deception attacks.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.5",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-008",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application only returns the minimum required sensitive data for the application's functionality.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.6",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-009",
+          "revision": 0,
+          "state": "D",
+          "body": "For example, only returning some of the digits of a credit card number and not the full number.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.6",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-010",
+          "revision": 0,
+          "state": "D",
+          "body": "If the complete data is required, it should be masked in the user interface unless the user specifically views it.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.6",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-011",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that sensitive information is subject to data retention classification, ensuring that outdated or unnecessary data is deleted automatically, on a defined schedule, or as the situation requires.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.7",
+          "profiles": [
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S02-012",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that sensitive information is removed from the metadata of user-submitted files unless storage is consented to by the user.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.2.8",
+          "profiles": [
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "$schema": "./_schema/entity.v1.schema.json",
+      "entity": {
+        "id": "V14S03",
+        "title": "Client-side Data Protection",
+        "parent": "V14"
+      },
+      "rule_set": {
+        "version": "0.1.4",
+        "timestamp": "2026-11-09T11:37:42Z",
+        "hash": "blake3:f6e8b13f50ed5a0651f8c8bc72a229c5633214ef84d039dbf2771bd660e33389"
+      },
+      "rules": [
+        {
+          "id": "V14S03-001",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that authenticated data is cleared from client storage, such as the browser DOM, after the client or session is terminated.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.3.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S03-002",
+          "revision": 0,
+          "state": "D",
+          "body": "The 'Clear-Site-Data' HTTP response header field may be able to help with this but the client-side should also be able to clear up if the server connection is not available when the session is terminated.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.3.1",
+          "profiles": [
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S03-003",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that the application sets sufficient anti-caching HTTP response header fields (i.e., Cache-Control: no-store) so that sensitive data is not cached in browsers.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.3.2",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        },
+        {
+          "id": "V14S03-004",
+          "revision": 0,
+          "state": "D",
+          "body": "Verify that data stored in browser storage (such as localStorage, sessionStorage, IndexedDB, or cookies) does not contain sensitive data, with the exception of session tokens.",
+          "added_by": "github:pleberre",
+          "added_at": "2026-11-09",
+          "supersedes": null,
+          "clause": "V14.3.3",
+          "profiles": [
+            "L2",
+            "L3"
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "notes": []
+}
