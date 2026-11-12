@@ -5,9 +5,9 @@
     "title": "Authentication"
   },
   "rule_set": {
-    "version": "0.1.74",
-    "timestamp": "2026-11-09T11:37:39Z",
-    "hash": "blake3:6a40a059c4d14b8b5595760cf740049cf6c692b438da477f68432168524c05a6"
+    "version": "0.1.140",
+    "timestamp": "2026-11-12T12:08:43Z",
+    "hash": "blake3:40710dc0e4bc7aa2534792cb0c90e0dac6724e0fad316b4881a134d32b371d6c"
   },
   "rules": [],
   "sub_entities": [
@@ -19,15 +19,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.5",
-        "timestamp": "2026-11-09T11:37:38Z",
-        "hash": "blake3:3c8d4560b91acc900581102ba87b3bb4336fe79f854e91de20e84ca92a4a40ad"
+        "version": "0.6.0",
+        "timestamp": "2026-11-12T12:08:42Z",
+        "hash": "blake3:21d42eea6945e14846325c84c9f88d1f2f280d1114c81f17732b0291007e8cd0"
       },
       "rules": [
         {
           "id": "V06S01-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that application documentation defines how controls such as rate limiting, anti-automation, and adaptive response, are used to defend against attacks such as credential stuffing and password brute force.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -42,7 +42,7 @@
         {
           "id": "V06S01-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The documentation must make clear how these controls are configured and prevent malicious account lockout.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -57,7 +57,7 @@
         {
           "id": "V06S01-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that a list of context-specific words is documented in order to prevent their use in passwords.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -71,7 +71,7 @@
         {
           "id": "V06S01-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The list could include permutations of organization names, product names, system identifiers, project codenames, department or role names, and similar.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -85,7 +85,7 @@
         {
           "id": "V06S01-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if the application includes multiple authentication pathways, these are all documented together with the security controls and authentication strength which must be consistently enforced across them.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -107,15 +107,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.15",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:cbdbe913f7f8b1158feede8f4a51b093bde331fdbf846cb4f9a764adf87810be"
+        "version": "0.16.0",
+        "timestamp": "2026-11-12T12:08:42Z",
+        "hash": "blake3:dfeeb2bf34fa770fcd7d57594ce0a28ae9629691ee80b297be61c337f7c094a5"
       },
       "rules": [
         {
           "id": "V06S02-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that user set passwords are at least 8 characters in length although a minimum of 15 characters is strongly recommended.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -130,7 +130,7 @@
         {
           "id": "V06S02-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that users can change their password.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -145,7 +145,7 @@
         {
           "id": "V06S02-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that password change functionality requires the user's current and new password.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -160,7 +160,7 @@
         {
           "id": "V06S02-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that passwords submitted during account registration or password change are checked against an available set of, at least, the top 3000 passwords which match the application's password policy, e.g. minimum length.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -175,7 +175,7 @@
         {
           "id": "V06S02-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that passwords of any composition can be used, without rules limiting the type of characters permitted.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -190,7 +190,7 @@
         {
           "id": "V06S02-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "There must be no requirement for a minimum number of upper or lower case characters, numbers, or special characters.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -205,7 +205,7 @@
         {
           "id": "V06S02-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that password input fields use type=password to mask the entry.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -220,7 +220,7 @@
         {
           "id": "V06S02-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Applications may allow the user to temporarily view the entire masked password, or the last typed character of the password.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -235,7 +235,7 @@
         {
           "id": "V06S02-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that \"paste\" functionality, browser password helpers, and external password managers are permitted.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -250,7 +250,7 @@
         {
           "id": "V06S02-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application verifies the user's password exactly as received from the user, without any modifications such as truncation or case transformation.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -265,7 +265,7 @@
         {
           "id": "V06S02-011",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that passwords of at least 64 characters are permitted.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -279,7 +279,7 @@
         {
           "id": "V06S02-012",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that a user's password stays valid until it is discovered to be compromised or the user rotates it.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -293,7 +293,7 @@
         {
           "id": "V06S02-013",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The application must not require periodic credential rotation.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -307,7 +307,7 @@
         {
           "id": "V06S02-014",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the documented list of context specific words is used to prevent easy to guess passwords being created.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -321,7 +321,7 @@
         {
           "id": "V06S02-015",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that passwords submitted during account registration or password changes are checked against a set of breached passwords.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -343,15 +343,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.12",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:12ba8f778fd3af440f21d9dbbb8add06f00f34f7ed955f8c512b5c709d0353da"
+        "version": "0.13.0",
+        "timestamp": "2026-11-12T12:08:42Z",
+        "hash": "blake3:7d58cde3fd9efe3ce47ffb843d1121b48a22eb103a4c9934be6f430ceaad2b93"
       },
       "rules": [
         {
           "id": "V06S03-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that controls to prevent attacks such as credential stuffing and password brute force are implemented according to the application's security documentation.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -366,7 +366,7 @@
         {
           "id": "V06S03-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that default user accounts (e.g., \"root\", \"admin\", or \"sa\") are not present in the application or are disabled.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -381,7 +381,7 @@
         {
           "id": "V06S03-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that either a multi-factor authentication mechanism or a combination of single-factor authentication mechanisms, must be used in order to access the application.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -395,7 +395,7 @@
         {
           "id": "V06S03-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For L3, one of the factors must be a hardware-based authentication mechanism which provides compromise and impersonation resistance against phishing attacks while verifying the intent to authenticate by requiring a user-initiated action (such as a button press on a FIDO hardware key or a mobile phone).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -409,7 +409,7 @@
         {
           "id": "V06S03-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Relaxing any of the considerations in this requirement requires a fully documented rationale and a comprehensive set of mitigating controls.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -423,7 +423,7 @@
         {
           "id": "V06S03-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if the application includes multiple authentication pathways, there are no undocumented pathways and that security controls and authentication strength are enforced consistently.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -437,7 +437,7 @@
         {
           "id": "V06S03-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that users are notified of suspicious authentication attempts (successful or unsuccessful).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -450,7 +450,7 @@
         {
           "id": "V06S03-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This may include authentication attempts from an unusual location or client, partially successful authentication (only one of multiple factors), an authentication attempt after a long period of inactivity or a successful authentication after several unsuccessful attempts.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -463,7 +463,7 @@
         {
           "id": "V06S03-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that email is not used as either a single-factor or multi-factor authentication mechanism.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -476,7 +476,7 @@
         {
           "id": "V06S03-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that users are notified after updates to authentication details, such as credential resets or modification of the username or email address.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -489,7 +489,7 @@
         {
           "id": "V06S03-011",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that valid users cannot be deduced from failed authentication challenges, such as by basing on error messages, HTTP response codes, or different response times.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -502,7 +502,7 @@
         {
           "id": "V06S03-012",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Registration and forgot password functionality must also have this protection.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -523,15 +523,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.8",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:452d6b6197715b2a1f732a3908ff0c823599595b9b846fb2a00b9055aa5f0dfd"
+        "version": "0.9.0",
+        "timestamp": "2026-11-12T12:08:43Z",
+        "hash": "blake3:df8b320a99802b0ec6509f19959b59031fed59b89c7f50d4321a3e272203fd12"
       },
       "rules": [
         {
           "id": "V06S04-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that system generated initial passwords or activation codes are securely randomly generated, follow the existing password policy, and expire after a short period of time or after they are initially used.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -546,7 +546,7 @@
         {
           "id": "V06S04-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "These initial secrets must not be permitted to become the long term password.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -561,7 +561,7 @@
         {
           "id": "V06S04-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that password hints or knowledge-based authentication (so-called \"secret questions\") are not present.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -576,7 +576,7 @@
         {
           "id": "V06S04-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that a secure process for resetting a forgotten password is implemented, that does not bypass any enabled multi-factor authentication mechanisms.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -590,7 +590,7 @@
         {
           "id": "V06S04-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that if a multi-factor authentication factor is lost, evidence of identity proofing is performed at the same level as during enrollment.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -604,7 +604,7 @@
         {
           "id": "V06S04-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that renewal instructions for authentication mechanisms which expire are sent with enough time to be carried out before the old authentication mechanism expires, configuring automated reminders if necessary.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -617,7 +617,7 @@
         {
           "id": "V06S04-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that administrative users can initiate the password reset process for the user, but that this does not allow them to change or choose the user's password.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -630,7 +630,7 @@
         {
           "id": "V06S04-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This prevents a situation where they know the user's password.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -651,15 +651,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.10",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:30b3799aad40a1174d32d8c3a08300a337c010074f4e39637f3f434a55634fee"
+        "version": "0.11.0",
+        "timestamp": "2026-11-12T12:08:43Z",
+        "hash": "blake3:d5139d37d04b794e5162e29f8e2d3873a330b1f0b0f15f931df4925d285488eb"
       },
       "rules": [
         {
           "id": "V06S05-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that lookup secrets, out-of-band authentication requests or codes, and time-based one-time passwords (TOTPs) are only successfully usable once.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -673,7 +673,7 @@
         {
           "id": "V06S05-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, when being stored in the application's backend, lookup secrets with less than 112 bits of entropy (19 random alphanumeric characters or 34 random digits) are hashed with an approved password storage hashing algorithm that incorporates a 32-bit random salt.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -687,7 +687,7 @@
         {
           "id": "V06S05-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "A standard hash function can be used if the secret has 112 bits of entropy or more.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -701,7 +701,7 @@
         {
           "id": "V06S05-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that lookup secrets, out-of-band authentication code, and time-based one-time password seeds, are generated using a Cryptographically Secure Pseudorandom Number Generator (CSPRNG) to avoid predictable values.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -715,7 +715,7 @@
         {
           "id": "V06S05-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that lookup secrets and out-of-band authentication codes have a minimum of 20 bits of entropy (typically 4 random alphanumeric characters or 6 random digits is sufficient).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -729,7 +729,7 @@
         {
           "id": "V06S05-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that out-of-band authentication requests, codes, or tokens, as well as time-based one-time passwords (TOTPs) have a defined lifetime.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -743,7 +743,7 @@
         {
           "id": "V06S05-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Out of band requests must have a maximum lifetime of 10 minutes and for TOTP a maximum lifetime of 30 seconds.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -757,7 +757,7 @@
         {
           "id": "V06S05-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that any authentication factor (including physical devices) can be revoked in case of theft or other loss.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -770,7 +770,7 @@
         {
           "id": "V06S05-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that biometric authentication mechanisms are only used as secondary factors together with either something you have or something you know.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -783,7 +783,7 @@
         {
           "id": "V06S05-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that time-based one-time passwords (TOTPs) are checked based on a time source from a trusted service and not from an untrusted or client provided time.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -804,15 +804,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.7",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:a87fd482872d0e14b5003f96a0fce548e4b60362fbcd555888c55f24151bc0f2"
+        "version": "0.8.0",
+        "timestamp": "2026-11-12T12:08:43Z",
+        "hash": "blake3:2613ad9e15b6ae4c7b794570d1b9f5b71ae3a9a803c7f3a4658de2caa2c202d6"
       },
       "rules": [
         {
           "id": "V06S06-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that authentication mechanisms using the Public Switched Telephone Network (PSTN) to deliver One-time Passwords (OTPs) via phone or SMS are offered only when the phone number has previously been validated, alternate stronger methods (such as Time based One-time Passwords) are also offered, and the service provides information on their security risks to users.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -826,7 +826,7 @@
         {
           "id": "V06S06-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For L3 applications, phone and SMS must not be available as options.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -840,7 +840,7 @@
         {
           "id": "V06S06-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that out-of-band authentication requests, codes, or tokens are bound to the original authentication request for which they were generated and are not usable for a previous or subsequent one.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -854,7 +854,7 @@
         {
           "id": "V06S06-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that a code based out-of-band authentication mechanism is protected against brute force attacks by using rate limiting.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -868,7 +868,7 @@
         {
           "id": "V06S06-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Consider also using a code with at least 64 bits of entropy.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -882,7 +882,7 @@
         {
           "id": "V06S06-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, where push notifications are used for multi-factor authentication, rate limiting is used to prevent push bombing attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -895,7 +895,7 @@
         {
           "id": "V06S06-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Number matching may also mitigate this risk.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -916,15 +916,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.2",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:6e34af55dee5a845c54231d7a6d11fe0270664663caccb002c9bb94ba401a968"
+        "version": "0.3.0",
+        "timestamp": "2026-11-12T12:08:43Z",
+        "hash": "blake3:4b29e28b7463ce1603d40e80063b7688f14033a78624a7d65ef481baf2a61f19"
       },
       "rules": [
         {
           "id": "V06S07-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the certificates used to verify cryptographic authentication assertions are stored in a way protects them from modification.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -937,7 +937,7 @@
         {
           "id": "V06S07-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the challenge nonce is at least 64 bits in length, and statistically unique or unique over the lifetime of the cryptographic device.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -958,15 +958,15 @@
         "parent": "V06"
       },
       "rule_set": {
-        "version": "0.1.7",
-        "timestamp": "2026-11-09T11:37:39Z",
-        "hash": "blake3:313de41b82f1dd6165153052ed12c9f463c22a944fe57959094b51d18efd9a41"
+        "version": "0.8.0",
+        "timestamp": "2026-11-12T12:08:43Z",
+        "hash": "blake3:b748a5b404f91725bf1b458a72a5285055c2b11d22b97d3b849b2d546b71953a"
       },
       "rules": [
         {
           "id": "V06S08-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if the application supports multiple identity providers (IdPs), the user's identity cannot be spoofed via another supported identity provider (eg. by using the same user identifier).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -980,7 +980,7 @@
         {
           "id": "V06S08-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The standard mitigation would be for the application to register and identify the user using a combination of the IdP ID (serving as a namespace) and the user's ID in the IdP.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -994,7 +994,7 @@
         {
           "id": "V06S08-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the presence and integrity of digital signatures on authentication assertions (for example on JWTs or SAML assertions) are always validated, rejecting any assertions that are unsigned or have invalid signatures.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -1008,7 +1008,7 @@
         {
           "id": "V06S08-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that SAML assertions are uniquely processed and used only once within the validity period to prevent replay attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -1022,7 +1022,7 @@
         {
           "id": "V06S08-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if an application uses a separate Identity Provider (IdP) and expects specific authentication strength, methods, or recentness for specific functions, the application verifies this using the information returned by the IdP.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -1036,7 +1036,7 @@
         {
           "id": "V06S08-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For example, if OIDC is used, this might be achieved by validating ID Token claims such as 'acr', 'amr', and 'auth_time' (if present).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -1050,7 +1050,7 @@
         {
           "id": "V06S08-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "If the IdP does not provide this information, the application must have a documented fallback approach that assumes that the minimum strength authentication mechanism was used (for example, single-factor authentication using username and password).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",

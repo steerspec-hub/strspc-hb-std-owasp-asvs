@@ -5,9 +5,9 @@
     "title": "Secure Communication"
   },
   "rule_set": {
-    "version": "0.1.21",
-    "timestamp": "2026-11-09T11:37:41Z",
-    "hash": "blake3:9b91566b09535472ba286dac38e6f0a688893d32013bb1efd0ced4ce5449b376"
+    "version": "0.1.39",
+    "timestamp": "2026-11-12T12:08:45Z",
+    "hash": "blake3:4fbf0003123fa8bf06522bda78e85d337bc1ce68b50dcbd6e9e8510eeaacd179"
   },
   "rules": [],
   "sub_entities": [
@@ -19,15 +19,15 @@
         "parent": "V12"
       },
       "rule_set": {
-        "version": "0.1.7",
-        "timestamp": "2026-11-09T11:37:41Z",
-        "hash": "blake3:14d687d947150f739015ef95a36b0dc5e3de8e18c5fa62f30b12dc5f84c8b7d1"
+        "version": "0.8.0",
+        "timestamp": "2026-11-12T12:08:45Z",
+        "hash": "blake3:a5cc2bd8a28dbcd340f86b00ab66a6d9e618b229b0f4145dd38478c6e1f9ff24"
       },
       "rules": [
         {
           "id": "V12S01-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that only the latest recommended versions of the TLS protocol are enabled, such as TLS 1.2 and TLS 1.3.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -42,7 +42,7 @@
         {
           "id": "V12S01-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The latest version of the TLS protocol must be the preferred option.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -57,7 +57,7 @@
         {
           "id": "V12S01-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that only recommended cipher suites are enabled, with the strongest cipher suites set as preferred.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -71,7 +71,7 @@
         {
           "id": "V12S01-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "L3 applications must only support cipher suites which provide forward secrecy.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -85,7 +85,7 @@
         {
           "id": "V12S01-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application validates that mTLS client certificates are trusted before using the certificate identity for authentication or authorization.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -99,7 +99,7 @@
         {
           "id": "V12S01-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that proper certification revocation, such as Online Certificate Status Protocol (OCSP) Stapling, is enabled and configured.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -112,7 +112,7 @@
         {
           "id": "V12S01-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that Encrypted Client Hello (ECH) is enabled in the application's TLS settings to prevent exposure of sensitive metadata, such as the Server Name Indication (SNI), during TLS handshake processes.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -133,15 +133,15 @@
         "parent": "V12"
       },
       "rule_set": {
-        "version": "0.1.2",
-        "timestamp": "2026-11-09T11:37:41Z",
-        "hash": "blake3:732538f63fb8ff285f04e0586e0b68688bbcfb161ddbf04c3a2a330d35fa311e"
+        "version": "0.3.0",
+        "timestamp": "2026-11-12T12:08:45Z",
+        "hash": "blake3:1b015faeb3173f43ad83cd9bafdc86cd5a6627b7d1e14607c42407bd2f32a950"
       },
       "rules": [
         {
           "id": "V12S02-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that TLS is used for all connectivity between a client and external facing, HTTP-based services, and does not fall back to insecure or unencrypted communications.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -156,7 +156,7 @@
         {
           "id": "V12S02-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that external facing services use publicly trusted TLS certificates.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -179,15 +179,15 @@
         "parent": "V12"
       },
       "rule_set": {
-        "version": "0.1.9",
-        "timestamp": "2026-11-09T11:37:41Z",
-        "hash": "blake3:61d08e143ee2159dbf0ff740a3857eb3374ce9a172bce072a75f52080ad74bc8"
+        "version": "0.10.0",
+        "timestamp": "2026-11-12T12:08:45Z",
+        "hash": "blake3:ef019549c31a1f7250e0f2faea7f4524b56b2e5c50554e5673ef69cc3c5a6da5"
       },
       "rules": [
         {
           "id": "V12S03-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that an encrypted protocol such as TLS is used for all inbound and outbound connections to and from the application, including monitoring systems, management tools, remote access and SSH, middleware, databases, mainframes, partner systems, or external APIs.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -201,7 +201,7 @@
         {
           "id": "V12S03-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The server must not fall back to insecure or unencrypted protocols.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -215,7 +215,7 @@
         {
           "id": "V12S03-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that TLS clients validate certificates received before communicating with a TLS server.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -229,7 +229,7 @@
         {
           "id": "V12S03-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that TLS or another appropriate transport encryption mechanism used for all connectivity between internal, HTTP-based services within the application, and does not fall back to insecure or unencrypted communications.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -243,7 +243,7 @@
         {
           "id": "V12S03-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that TLS connections between internal services use trusted certificates.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -257,7 +257,7 @@
         {
           "id": "V12S03-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Where internally generated or self-signed certificates are used, the consuming service must be configured to only trust specific internal CAs and specific self-signed certificates.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -271,7 +271,7 @@
         {
           "id": "V12S03-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that services communicating internally within a system (intra-service communications) use strong authentication to ensure that each endpoint is verified.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -284,7 +284,7 @@
         {
           "id": "V12S03-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Strong authentication methods, such as TLS client authentication, must be employed to ensure identity, using public-key infrastructure and mechanisms that are resistant to replay attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -297,7 +297,7 @@
         {
           "id": "V12S03-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For microservice architectures, consider using a service mesh to simplify certificate management and enhance security.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",

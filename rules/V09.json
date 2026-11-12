@@ -5,9 +5,9 @@
     "title": "Self-contained Tokens"
   },
   "rule_set": {
-    "version": "0.1.17",
-    "timestamp": "2026-11-09T11:37:40Z",
-    "hash": "blake3:49678333f6ad32635a429ad5b43708d6b7fe70970bb08a3bd6755b2144cdaf6c"
+    "version": "0.1.32",
+    "timestamp": "2026-11-12T12:08:44Z",
+    "hash": "blake3:07cfff904f713d821ad8df4cbc4cc3244ef7e0527522ec25b050abdafe6908c2"
   },
   "rules": [],
   "sub_entities": [
@@ -19,15 +19,15 @@
         "parent": "V09"
       },
       "rule_set": {
-        "version": "0.1.6",
-        "timestamp": "2026-11-09T11:37:40Z",
-        "hash": "blake3:cdaeef1b5ef03c03bf76978ecc0cd88f1a6409865660dfeebe332dd571a7db60"
+        "version": "0.7.0",
+        "timestamp": "2026-11-12T12:08:44Z",
+        "hash": "blake3:4e2bbc20bb56663b2ebafe4282ff53a1322c90473bb0e17f4cec74e6b135395b"
       },
       "rules": [
         {
           "id": "V09S01-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that self-contained tokens are validated using their digital signature or MAC to protect against tampering before accepting the token's contents.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -42,7 +42,7 @@
         {
           "id": "V09S01-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that only algorithms on an allowlist can be used to create and verify self-contained tokens, for a given context.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -57,7 +57,7 @@
         {
           "id": "V09S01-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The allowlist must include the permitted algorithms, ideally only either symmetric or asymmetric algorithms, and must not include the 'None' algorithm.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -72,7 +72,7 @@
         {
           "id": "V09S01-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "If both symmetric and asymmetric must be supported, additional controls will be needed to prevent key confusion.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -87,7 +87,7 @@
         {
           "id": "V09S01-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that key material that is used to validate self-contained tokens is from trusted pre-configured sources for the token issuer, preventing attackers from specifying untrusted sources and keys.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -102,7 +102,7 @@
         {
           "id": "V09S01-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For JWTs and other JWS structures, headers such as 'jku', 'x5u', and 'jwk' must be validated against an allowlist of trusted sources.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -125,15 +125,15 @@
         "parent": "V09"
       },
       "rule_set": {
-        "version": "0.1.9",
-        "timestamp": "2026-11-09T11:37:40Z",
-        "hash": "blake3:20eb4f170c71c2f294a69a44d8a52c0cd6eeedc06d5d3a26afa0de197afefa13"
+        "version": "0.10.0",
+        "timestamp": "2026-11-12T12:08:44Z",
+        "hash": "blake3:0d7501093765b65d847c420958c0d5f68991f938106c5779c2bc759605f149d5"
       },
       "rules": [
         {
           "id": "V09S02-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if a validity time span is present in the token data, the token and its content are accepted only if the verification time is within this validity time span.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -148,7 +148,7 @@
         {
           "id": "V09S02-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For example, for JWTs, the claims 'nbf' and 'exp' must be verified.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -163,7 +163,7 @@
         {
           "id": "V09S02-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the service receiving a token validates the token to be the correct type and is meant for the intended purpose before accepting the token's contents.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -177,7 +177,7 @@
         {
           "id": "V09S02-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For example, only access tokens can be accepted for authorization decisions and only ID Tokens can be used for proving user authentication.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -191,7 +191,7 @@
         {
           "id": "V09S02-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the service only accepts tokens which are intended for use with that service (audience).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -205,7 +205,7 @@
         {
           "id": "V09S02-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For JWTs, this can be achieved by validating the 'aud' claim against an allowlist defined in the service.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -219,7 +219,7 @@
         {
           "id": "V09S02-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if a token issuer uses the same private key for issuing tokens to different audiences, the issued tokens contain an audience restriction that uniquely identifies the intended audiences.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -233,7 +233,7 @@
         {
           "id": "V09S02-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This will prevent a token from being reused with an unintended audience.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -247,7 +247,7 @@
         {
           "id": "V09S02-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "If the audience identifier is dynamically provisioned, the token issuer must validate these audiences in order to make sure that they do not result in audience impersonation.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",

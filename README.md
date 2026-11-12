@@ -12,8 +12,11 @@ than only against the clauses it happened to map.
 
 ## Status
 
-All 345 requirements of ASVS 5.0.0 are transcribed as 503 Draft rules: 70 clauses at L1, 253 at L2
-and 345 at L3. They're Published once checked against the source. Next:
+All 345 requirements of ASVS 5.0.0 are transcribed as 503 Published rules: 70 clauses at L1, 253 at
+L2 and 345 at L3. Before they were Published, they were checked against OWASP's release: the vendored
+source is byte-identical to the release asset, and for every requirement of both the flat JSON and
+the CSV export, its rules joined in order give the requirement's text, with matching clause, levels,
+chapter and section. Next:
 
 - [#2](https://github.com/steerspec-hub/strspc-hb-std-owasp-asvs/issues/2): the crosswalk from
   4.0.3 to 5.0.0.
@@ -34,12 +37,12 @@ The realm follows the core Standard Realm rules (STDRLM) of `dev.steerspec.core`
   kept in [`source/`](source/), with `strspc realm add`, `strspc entity add` and `strspc rule add`. No
   rule JSON is written by hand. Only Markdown escapes of punctuation are removed (`Sec-Fetch-\\*`
   reads `Sec-Fetch-*`).
-- To regenerate, delete the entity files under `rules/` (keep `realm.json` and `_schema/`) and run
-  `python3 tools/generate.py` with strspc 1.40.0 or later. Once rules are Published, a fix is
-  `strspc rule supersede`, never a regeneration: rule IDs are never reused. When the new rule is
-  Published, `strspc rule terminate` moves the old one to Terminated in the same change (STDRLM-013).
-- The rules are Published once checked against the source, and never Implemented: a standard is
-  measured against, not evaluated against code.
+- The rules are Published, so they are never regenerated: rule IDs are never reused. A fix is
+  `strspc rule supersede`, and when the new rule is Published, `strspc rule terminate` moves the old
+  one to Terminated in the same change (STDRLM-013). The generator stays as the record of how the
+  rules were made, and for a later edition.
+- The rules are never Implemented: a standard is measured against, not evaluated against code
+  (STDRLM-010).
 - CI lints in strict mode. The bodies are the standard's own wording, so a Rule body may hold no Key
   Word and keep its examples (STDRLM-020, STDRLM-021). strspc 1.41.0 and later skip those two
   checks in a realm of kind standard.
