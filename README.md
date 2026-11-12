@@ -68,8 +68,8 @@ to it, with the level you claim:
   "dependencies": [
     {
       "realm_id": "dev.steerspec.std.owasp.asvs.v5",
-      "version": "<release>",
-      "source": "github://steerspec-hub/strspc-hb-std-owasp-asvs@v<release>/rules"
+      "version": "1.0.0",
+      "source": "github://steerspec-hub/strspc-hb-std-owasp-asvs@v1.0.0/rules"
     }
   ]
 }
