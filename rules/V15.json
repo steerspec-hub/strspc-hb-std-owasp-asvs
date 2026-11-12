@@ -5,9 +5,9 @@
     "title": "Secure Coding and Architecture"
   },
   "rule_set": {
-    "version": "0.1.31",
-    "timestamp": "2026-11-09T11:37:43Z",
-    "hash": "blake3:82f13be90227c2a76faaa84649a0a1bfe715f5137ab224bbcfe807632c8f533c"
+    "version": "0.1.58",
+    "timestamp": "2026-11-12T12:08:46Z",
+    "hash": "blake3:9a3cac7b69ce082917e1c46cfbd56ea905e330e7ea0d487ab6d8f770ee01d1ab"
   },
   "rules": [],
   "sub_entities": [
@@ -19,15 +19,15 @@
         "parent": "V15"
       },
       "rule_set": {
-        "version": "0.1.7",
-        "timestamp": "2026-11-09T11:37:42Z",
-        "hash": "blake3:dcbb5286f6633bd7403a0556c2dde0d45ec9e37ac232149e4772baa613b692f3"
+        "version": "0.8.0",
+        "timestamp": "2026-11-12T12:08:46Z",
+        "hash": "blake3:6e7c2580c458811a836737bc6762c25f3e3ac96d493d521a4cee764712e8a440"
       },
       "rules": [
         {
           "id": "V15S01-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that application documentation defines risk based remediation time frames for 3rd party component versions with vulnerabilities and for updating libraries in general, to minimize the risk from these components.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -42,7 +42,7 @@
         {
           "id": "V15S01-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that an inventory catalog, such as software bill of materials (SBOM), is maintained of all third-party libraries in use, including verifying that components come from pre-defined, trusted, and continually maintained repositories.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -56,7 +56,7 @@
         {
           "id": "V15S01-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application documentation identifies functionality which is time-consuming or resource-demanding.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -70,7 +70,7 @@
         {
           "id": "V15S01-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This must include how to prevent a loss of availability due to overusing this functionality and how to avoid a situation where building a response takes longer than the consumer's timeout.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -84,7 +84,7 @@
         {
           "id": "V15S01-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Potential defenses may include asynchronous processing, using queues, and limiting parallel processes per user and per application.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -98,7 +98,7 @@
         {
           "id": "V15S01-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that application documentation highlights third-party libraries which are considered to be \"risky components\".",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -111,7 +111,7 @@
         {
           "id": "V15S01-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that application documentation highlights parts of the application where \"dangerous functionality\" is being used.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -132,15 +132,15 @@
         "parent": "V15"
       },
       "rule_set": {
-        "version": "0.1.6",
-        "timestamp": "2026-11-09T11:37:42Z",
-        "hash": "blake3:76461e70a50da1760590838aed235a8b93d54e9f9801c9ef19dbd4926bce94e3"
+        "version": "0.7.0",
+        "timestamp": "2026-11-12T12:08:46Z",
+        "hash": "blake3:caa01173fa6385f81e766e8e50257b0266c4b160e1ad5913fcdab3f266644643"
       },
       "rules": [
         {
           "id": "V15S02-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application only contains components which have not breached the documented update and remediation time frames.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -155,7 +155,7 @@
         {
           "id": "V15S02-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application has implemented defenses against loss of availability due to functionality which is time-consuming or resource-demanding, based on the documented security decisions and strategies for this.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -169,7 +169,7 @@
         {
           "id": "V15S02-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the production environment only includes functionality that is required for the application to function, and does not expose extraneous functionality such as test code, sample snippets, and development functionality.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -183,7 +183,7 @@
         {
           "id": "V15S02-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that third-party components and all of their transitive dependencies are included from the expected repository, whether internally owned or an external source, and that there is no risk of a dependency confusion attack.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -196,7 +196,7 @@
         {
           "id": "V15S02-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application implements additional protections around parts of the application which are documented as containing \"dangerous functionality\" or using third-party libraries considered to be \"risky components\".",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -209,7 +209,7 @@
         {
           "id": "V15S02-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This could include techniques such as sandboxing, encapsulation, containerization or network level isolation to delay and deter attackers who compromise one part of an application from pivoting elsewhere in the application.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -230,15 +230,15 @@
         "parent": "V15"
       },
       "rule_set": {
-        "version": "0.1.9",
-        "timestamp": "2026-11-09T11:37:42Z",
-        "hash": "blake3:11ab7d21e5e1c5fea411d66dd24dd0d45f93c8db85a0098f2fa30a843faa4636"
+        "version": "0.10.0",
+        "timestamp": "2026-11-12T12:08:46Z",
+        "hash": "blake3:582fa51861e4b705b98b1909efea5157a637495460bb2bc422183bad4eaca3e8"
       },
       "rules": [
         {
           "id": "V15S03-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application only returns the required subset of fields from a data object.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -253,7 +253,7 @@
         {
           "id": "V15S03-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For example, it should not return an entire data object, as some individual fields should not be accessible to users.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -268,7 +268,7 @@
         {
           "id": "V15S03-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that where the application backend makes calls to external URLs, it is configured to not follow redirects unless it is intended functionality.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -282,7 +282,7 @@
         {
           "id": "V15S03-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application has countermeasures to protect against mass assignment attacks by limiting allowed fields per controller and action, e.g., it is not possible to insert or update a field value when it was not intended to be part of that action.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -296,7 +296,7 @@
         {
           "id": "V15S03-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that all proxying and middleware components transfer the user's original IP address correctly using trusted data fields that cannot be manipulated by the end user, and the application and web server use this correct value for logging and security decisions such as rate limiting, taking into account that even the original IP address may not be reliable due to dynamic IPs, VPNs, or corporate firewalls.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -310,7 +310,7 @@
         {
           "id": "V15S03-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application explicitly ensures that variables are of the correct type and performs strict equality and comparator operations.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -324,7 +324,7 @@
         {
           "id": "V15S03-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This is to avoid type juggling or type confusion vulnerabilities caused by the application code making an assumption about a variable type.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -338,7 +338,7 @@
         {
           "id": "V15S03-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that JavaScript code is written in a way that prevents prototype pollution, for example, by using Set() or Map() instead of object literals.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -352,7 +352,7 @@
         {
           "id": "V15S03-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application has defenses against HTTP parameter pollution attacks, particularly if the application framework makes no distinction about the source of request parameters (query string, body parameters, cookies, or header fields).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -374,15 +374,15 @@
         "parent": "V15"
       },
       "rule_set": {
-        "version": "0.1.5",
-        "timestamp": "2026-11-09T11:37:43Z",
-        "hash": "blake3:1355302a53c98c8d1086e4319506889ccc003df0b42459589145e87bb99a1753"
+        "version": "0.6.0",
+        "timestamp": "2026-11-12T12:08:46Z",
+        "hash": "blake3:de2534fd7299b2d02b2da728c33383510315055ea59e2fe12052cfd353c2f6cd"
       },
       "rules": [
         {
           "id": "V15S04-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that shared objects in multi-threaded code (such as caches, files, or in-memory objects accessed by multiple threads) are accessed safely by using thread-safe types and synchronization mechanisms like locks or semaphores to avoid race conditions and data corruption.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -395,7 +395,7 @@
         {
           "id": "V15S04-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that checks on a resource's state, such as its existence or permissions, and the actions that depend on them are performed as a single atomic operation to prevent time-of-check to time-of-use (TOCTOU) race conditions.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -408,7 +408,7 @@
         {
           "id": "V15S04-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For example, checking if a file exists before opening it, or verifying a user’s access before granting it.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -421,7 +421,7 @@
         {
           "id": "V15S04-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that locks are used consistently to avoid threads getting stuck, whether by waiting on each other or retrying endlessly, and that locking logic stays within the code responsible for managing the resource to ensure locks cannot be inadvertently or maliciously modified by external classes or code.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -434,7 +434,7 @@
         {
           "id": "V15S04-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that resource allocation policies prevent thread starvation by ensuring fair access to resources, such as by leveraging thread pools, allowing lower-priority threads to proceed within a reasonable timeframe.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",

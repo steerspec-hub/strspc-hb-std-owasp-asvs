@@ -5,9 +5,9 @@
     "title": "Web Frontend Security"
   },
   "rule_set": {
-    "version": "0.1.60",
-    "timestamp": "2026-11-09T11:37:38Z",
-    "hash": "blake3:0573deb8f4ff62a37541dfa017df5f06861862f03f3fbb5ed76b6535896212d3"
+    "version": "0.1.113",
+    "timestamp": "2026-11-12T12:08:41Z",
+    "hash": "blake3:d34918b88acae040dbb36f6770e03513a565747ca63b40a1b5ff7420e79da70f"
   },
   "rules": [],
   "sub_entities": [
@@ -19,15 +19,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.2",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:4d9c2b64fd7856647c78f1c51abb3b6ded86aa9e955969f1f014bf879a96b557"
+        "version": "0.3.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:567ff42ef0cdde116074a5ece2e853f312c1d8665a4255e27c4a2c87fe395c3b"
       },
       "rules": [
         {
           "id": "V03S01-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that application documentation states the expected security features that browsers using the application must support (such as HTTPS, HTTP Strict Transport Security (HSTS), Content Security Policy (CSP), and other relevant HTTP security mechanisms).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -40,7 +40,7 @@
         {
           "id": "V03S01-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "It must also define how the application must behave when some of these features are not available (such as warning the user or blocking access).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -61,15 +61,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.4",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:373c4e40a747c2e0c64c2ba0790f76df376bab0f58d32d8f93d85b5f9e33d90b"
+        "version": "0.5.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:272c74ea9015936e1d7ed6fe360b1b77f59561d9bffecbeb645d55275ea3db81"
       },
       "rules": [
         {
           "id": "V03S02-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that security controls are in place to prevent browsers from rendering content or functionality in HTTP responses in an incorrect context (e.g., when an API, a user-uploaded file or other resource is requested directly).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -84,7 +84,7 @@
         {
           "id": "V03S02-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Possible controls could include: not serving the content unless HTTP request header fields (such as Sec-Fetch-*) indicate it is the correct context, using the sandbox directive of the Content-Security-Policy header field or using the attachment disposition type in the Content-Disposition header field.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -99,7 +99,7 @@
         {
           "id": "V03S02-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that content intended to be displayed as text, rather than rendered as HTML, is handled using safe rendering functions (such as createTextNode or textContent) to prevent unintended execution of content such as HTML or JavaScript.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -114,7 +114,7 @@
         {
           "id": "V03S02-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application avoids DOM clobbering when using client-side JavaScript by employing explicit variable declarations, performing strict type checking, avoiding storing global variables on the document object, and implementing namespace isolation.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -135,15 +135,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.6",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:2ba5010bcbe53ad0579e450c2c5a6516bc4415a09ff8bc363450615c9e6e1477"
+        "version": "0.7.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:fc41c2030c6180d3ecfdde2156c5e8f6f3bb5c1ee968789fb44eca01e770bf3f"
       },
       "rules": [
         {
           "id": "V03S03-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that cookies have the 'Secure' attribute set, and if the '__Host-' prefix is not used for the cookie name, the '__Secure-' prefix must be used for the cookie name.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -158,7 +158,7 @@
         {
           "id": "V03S03-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that each cookie's 'SameSite' attribute value is set according to the purpose of the cookie, to limit exposure to user interface redress attacks and browser-based request forgery attacks, commonly known as cross-site request forgery (CSRF).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -172,7 +172,7 @@
         {
           "id": "V03S03-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that cookies have the '__Host-' prefix for the cookie name unless they are explicitly designed to be shared with other hosts.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -186,7 +186,7 @@
         {
           "id": "V03S03-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that if the value of a cookie is not meant to be accessible to client-side scripts (such as a session token), the cookie must have the 'HttpOnly' attribute set and the same value (e. g. session token) must only be transferred to the client via the 'Set-Cookie' header field.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -200,7 +200,7 @@
         {
           "id": "V03S03-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that when the application writes a cookie, the cookie name and value length combined are not over 4096 bytes.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -213,7 +213,7 @@
         {
           "id": "V03S03-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Overly large cookies will not be stored by the browser and therefore not sent with requests, preventing the user from using application functionality which relies on that cookie.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -234,15 +234,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.19",
-        "timestamp": "2026-11-09T11:37:38Z",
-        "hash": "blake3:4ad10def74a73ad089065df72f8fe875bd368c595d818f18b39a0bdea0a8b911"
+        "version": "0.20.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:556a460f538d695f9c1f62233dcd6dbc303259875054fa98b410f5115b841d46"
       },
       "rules": [
         {
           "id": "V03S04-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that a Strict-Transport-Security header field is included on all responses to enforce an HTTP Strict Transport Security (HSTS) policy.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -257,7 +257,7 @@
         {
           "id": "V03S04-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "A maximum age of at least 1 year must be defined, and for L2 and up, the policy must apply to all subdomains as well.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -272,7 +272,7 @@
         {
           "id": "V03S04-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the Cross-Origin Resource Sharing (CORS) Access-Control-Allow-Origin header field is a fixed value by the application, or if the Origin HTTP request header field value is used, it is validated against an allowlist of trusted origins.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -287,7 +287,7 @@
         {
           "id": "V03S04-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "When 'Access-Control-Allow-Origin: *' needs to be used, verify that the response does not include any sensitive information.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -302,7 +302,7 @@
         {
           "id": "V03S04-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that HTTP responses include a Content-Security-Policy response header field which defines directives to ensure the browser only loads and executes trusted content or resources, in order to limit execution of malicious JavaScript.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -316,7 +316,7 @@
         {
           "id": "V03S04-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "As a minimum, a global policy must be used which includes the directives object-src 'none' and base-uri 'none' and defines either an allowlist or uses nonces or hashes.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -330,7 +330,7 @@
         {
           "id": "V03S04-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For an L3 application, a per-response policy with nonces or hashes must be defined.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -344,7 +344,7 @@
         {
           "id": "V03S04-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that all HTTP responses contain an 'X-Content-Type-Options: nosniff' header field.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -358,7 +358,7 @@
         {
           "id": "V03S04-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This instructs browsers not to use content sniffing and MIME type guessing for the given response, and to require the response's Content-Type header field value to match the destination resource.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -372,7 +372,7 @@
         {
           "id": "V03S04-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "For example, the response to a request for a style is only accepted if the response's Content-Type is 'text/css'.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -386,7 +386,7 @@
         {
           "id": "V03S04-011",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This also enables the use of the Cross-Origin Read Blocking (CORB) functionality by the browser.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -400,7 +400,7 @@
         {
           "id": "V03S04-012",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application sets a referrer policy to prevent leakage of technically sensitive data to third-party services via the 'Referer' HTTP request header field.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -414,7 +414,7 @@
         {
           "id": "V03S04-013",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This can be done using the Referrer-Policy HTTP response header field or via HTML element attributes.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -428,7 +428,7 @@
         {
           "id": "V03S04-014",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Sensitive data could include path and query data in the URL, and for internal non-public applications also the hostname.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -442,7 +442,7 @@
         {
           "id": "V03S04-015",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the web application uses the frame-ancestors directive of the Content-Security-Policy header field for every HTTP response to ensure that it cannot be embedded by default and that embedding of specific resources is allowed only when necessary.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -456,7 +456,7 @@
         {
           "id": "V03S04-016",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Note that the X-Frame-Options header field, although supported by browsers, is obsolete and may not be relied upon.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -470,7 +470,7 @@
         {
           "id": "V03S04-017",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the Content-Security-Policy header field specifies a location to report violations.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -483,7 +483,7 @@
         {
           "id": "V03S04-018",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that all HTTP responses that initiate a document rendering (such as responses with Content-Type text/html), include the Cross‑Origin‑Opener‑Policy header field with the same-origin directive or the same-origin-allow-popups directive as required.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -496,7 +496,7 @@
         {
           "id": "V03S04-019",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This prevents attacks that abuse shared access to Window objects, such as tabnabbing and frame counting.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -517,15 +517,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.13",
-        "timestamp": "2026-11-09T11:37:38Z",
-        "hash": "blake3:ad991f67d540a7c4a720f1ab3a8c316ad7a51023761dda6ba4f5667620a2f8f4"
+        "version": "0.14.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:f8bbfd2f863ab9b1564a57708b4db0e763465229567811f7abc1962930ffcd74"
       },
       "rules": [
         {
           "id": "V03S05-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if the application does not rely on the CORS preflight mechanism to prevent disallowed cross-origin requests to use sensitive functionality, these requests are validated to ensure they originate from the application itself.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -540,7 +540,7 @@
         {
           "id": "V03S05-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This may be done by using and validating anti-forgery tokens or requiring extra HTTP header fields that are not CORS-safelisted request-header fields.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -555,7 +555,7 @@
         {
           "id": "V03S05-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This is to defend against browser-based request forgery attacks, commonly known as cross-site request forgery (CSRF).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -570,7 +570,7 @@
         {
           "id": "V03S05-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that, if the application relies on the CORS preflight mechanism to prevent disallowed cross-origin use of sensitive functionality, it is not possible to call the functionality with a request which does not trigger a CORS-preflight request.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -585,7 +585,7 @@
         {
           "id": "V03S05-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This may require checking the values of the 'Origin' and 'Content-Type' request header fields or using an extra header field that is not a CORS-safelisted header-field.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -600,7 +600,7 @@
         {
           "id": "V03S05-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that HTTP requests to sensitive functionality use appropriate HTTP methods such as POST, PUT, PATCH, or DELETE, and not methods defined by the HTTP specification as \"safe\" such as HEAD, OPTIONS, or GET.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -615,7 +615,7 @@
         {
           "id": "V03S05-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Alternatively, strict validation of the Sec-Fetch-* request header fields can be used to ensure that the request did not originate from an inappropriate cross-origin call, a navigation request, or a resource load (such as an image source) where this is not expected.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -630,7 +630,7 @@
         {
           "id": "V03S05-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that separate applications are hosted on different hostnames to leverage the restrictions provided by same-origin policy, including how documents or scripts loaded by one origin can interact with resources from another origin and hostname-based restrictions on cookies.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -644,7 +644,7 @@
         {
           "id": "V03S05-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that messages received by the postMessage interface are discarded if the origin of the message is not trusted, or if the syntax of the message is invalid.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -658,7 +658,7 @@
         {
           "id": "V03S05-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that JSONP functionality is not enabled anywhere across the application to avoid Cross-Site Script Inclusion (XSSI) attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -671,7 +671,7 @@
         {
           "id": "V03S05-011",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that data requiring authorization is not included in script resource responses, like JavaScript files, to prevent Cross-Site Script Inclusion (XSSI) attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -684,7 +684,7 @@
         {
           "id": "V03S05-012",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that authenticated resources (such as images, videos, scripts, and other documents) can be loaded or embedded on behalf of the user only when intended.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -697,7 +697,7 @@
         {
           "id": "V03S05-013",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This can be accomplished by strict validation of the Sec-Fetch-* HTTP request header fields to ensure that the request did not originate from an inappropriate cross-origin call, or by setting a restrictive Cross-Origin-Resource-Policy HTTP response header field to instruct the browser to block returned content.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -718,15 +718,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.2",
-        "timestamp": "2026-11-09T11:37:38Z",
-        "hash": "blake3:a7ac8d4261b9d61b19292caab48a53a37d13e8ed2f50350796dc0331d1a4fb76"
+        "version": "0.3.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:f96335de88a27ee1994400e5501704c1ef3009242a4c8e8562883d6048a017e7"
       },
       "rules": [
         {
           "id": "V03S06-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that client-side assets, such as JavaScript libraries, CSS, or web fonts, are only hosted externally (e.g., on a Content Delivery Network) if the resource is static and versioned and Subresource Integrity (SRI) is used to validate the integrity of the asset.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -739,7 +739,7 @@
         {
           "id": "V03S06-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "If this is not possible, there should be a documented security decision to justify this for each resource.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -760,15 +760,15 @@
         "parent": "V03"
       },
       "rule_set": {
-        "version": "0.1.7",
-        "timestamp": "2026-11-09T11:37:38Z",
-        "hash": "blake3:46457bda3793c3588d0b92de0aef82b92e79560e27ba0c8a8d3f61843cd81a4b"
+        "version": "0.8.0",
+        "timestamp": "2026-11-12T12:08:41Z",
+        "hash": "blake3:d53b57be970752e97993dbe03f993fe1ccd7a0ec24c6e7ab48b3746d2ea64cf3"
       },
       "rules": [
         {
           "id": "V03S07-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application only uses client-side technologies which are still supported and considered secure.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -782,7 +782,7 @@
         {
           "id": "V03S07-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Examples of technologies which do not meet this requirement include NSAPI plugins, Flash, Shockwave, ActiveX, Silverlight, NACL, or client-side Java applets.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -796,7 +796,7 @@
         {
           "id": "V03S07-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application will only automatically redirect the user to a different hostname or domain (which is not controlled by the application) where the destination appears on an allowlist.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -810,7 +810,7 @@
         {
           "id": "V03S07-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application shows a notification when the user is being redirected to a URL outside of the application's control, with an option to cancel the navigation.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -823,7 +823,7 @@
         {
           "id": "V03S07-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application's top-level domain (e.g., site.tld) is added to the public preload list for HTTP Strict Transport Security (HSTS).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -836,7 +836,7 @@
         {
           "id": "V03S07-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This ensures that the use of TLS for the application is built directly into the main browsers, rather than relying only on the Strict-Transport-Security response header field.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -849,7 +849,7 @@
         {
           "id": "V03S07-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application behaves as documented (such as warning the user or blocking access) if the browser used to access the application does not support the expected security features.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",

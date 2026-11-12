@@ -5,9 +5,9 @@
     "title": "Encoding and Sanitization"
   },
   "rule_set": {
-    "version": "0.1.42",
-    "timestamp": "2026-11-09T11:37:37Z",
-    "hash": "blake3:dae999115100b13b04a6dfe5b7606edfbba25039f828ca9cf1c7bbecf1ee3d59"
+    "version": "0.1.79",
+    "timestamp": "2026-11-12T12:08:40Z",
+    "hash": "blake3:2ccfb58815d8d68df4ad48cff102b15d37b4d659d8f98efdd6144540de8ef2c6"
   },
   "rules": [],
   "sub_entities": [
@@ -19,15 +19,15 @@
         "parent": "V01"
       },
       "rule_set": {
-        "version": "0.1.2",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:d31d647d16adf32014bac712f9917edd51014ab4284a36288e3c975108d8a121"
+        "version": "0.3.0",
+        "timestamp": "2026-11-12T12:08:40Z",
+        "hash": "blake3:6a8f109a4eca80ba3646b84f8c551f2b5fa64fffd883061a3549f4d50cff0ab4"
       },
       "rules": [
         {
           "id": "V01S01-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that input is decoded or unescaped into a canonical form only once, it is only decoded when encoded data in that form is expected, and that this is done before processing the input further, for example it is not performed after input validation or sanitization.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -41,7 +41,7 @@
         {
           "id": "V01S01-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application performs output encoding and escaping either as a final step before being used by the interpreter for which it is intended or by the interpreter itself.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -63,15 +63,15 @@
         "parent": "V01"
       },
       "rule_set": {
-        "version": "0.1.14",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:18840b0b7adbfb1a576677139da67f06d322aba6835aaa7fd39c535f69454263"
+        "version": "0.15.0",
+        "timestamp": "2026-11-12T12:08:40Z",
+        "hash": "blake3:06b23c091fff13197a056ccda1f44f2750f35e8894850a85bc3cfe6036180623"
       },
       "rules": [
         {
           "id": "V01S02-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that output encoding for an HTTP response, HTML document, or XML document is relevant for the context required, such as encoding the relevant characters for HTML elements, HTML attributes, HTML comments, CSS, or HTTP header fields, to avoid changing the message or document structure.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -86,7 +86,7 @@
         {
           "id": "V01S02-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that when dynamically building URLs, untrusted data is encoded according to its context (e.g., URL encoding or base64url encoding for query or path parameters).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -101,7 +101,7 @@
         {
           "id": "V01S02-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Ensure that only safe URL protocols are permitted (e.g., disallow javascript: or data:).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -116,7 +116,7 @@
         {
           "id": "V01S02-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that output encoding or escaping is used when dynamically building JavaScript content (including JSON), to avoid changing the message or document structure (to avoid JavaScript and JSON injection).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -131,7 +131,7 @@
         {
           "id": "V01S02-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that data selection or database queries (e.g., SQL, HQL, NoSQL, Cypher) use parameterized queries, ORMs, entity frameworks, or are otherwise protected from SQL Injection and other database injection attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -146,7 +146,7 @@
         {
           "id": "V01S02-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "This is also relevant when writing stored procedures.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -161,7 +161,7 @@
         {
           "id": "V01S02-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application protects against OS command injection and that operating system calls use parameterized OS queries or use contextual command line output encoding.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -176,7 +176,7 @@
         {
           "id": "V01S02-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application protects against LDAP injection vulnerabilities, or that specific security controls to prevent LDAP injection have been implemented.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -190,7 +190,7 @@
         {
           "id": "V01S02-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application is protected against XPath injection attacks by using query parameterization or precompiled queries.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -204,7 +204,7 @@
         {
           "id": "V01S02-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that LaTeX processors are configured securely (such as not using the \"--shell-escape\" flag) and an allowlist of commands is used to prevent LaTeX injection attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -218,7 +218,7 @@
         {
           "id": "V01S02-011",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application escapes special characters in regular expressions (typically using a backslash) to prevent them from being misinterpreted as metacharacters.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -232,7 +232,7 @@
         {
           "id": "V01S02-012",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application is protected against CSV and Formula Injection.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -245,7 +245,7 @@
         {
           "id": "V01S02-013",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "The application must follow the escaping rules defined in RFC 4180 sections 2.6 and 2.7 when exporting CSV content.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -258,7 +258,7 @@
         {
           "id": "V01S02-014",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Additionally, when exporting to CSV or other spreadsheet formats (such as XLS, XLSX, or ODF), special characters (including '=', '+', '-', '@', '\\t' (tab), and '\\0' (null character)) must be escaped with a single quote if they appear as the first character in a field value.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -279,15 +279,15 @@
         "parent": "V01"
       },
       "rule_set": {
-        "version": "0.1.14",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:dd7f0ef72b84c5c2a51bf058d665e0494496c832c3584aef4ed9e08623ed2d83"
+        "version": "0.15.0",
+        "timestamp": "2026-11-12T12:08:40Z",
+        "hash": "blake3:55116249dbfed72b31e152b8acb7238c816521ee5ea9b2540c043cb6762e07c6"
       },
       "rules": [
         {
           "id": "V01S03-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that all untrusted HTML input from WYSIWYG editors or similar is sanitized using a well-known and secure HTML sanitization library or framework feature.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -302,7 +302,7 @@
         {
           "id": "V01S03-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application avoids the use of eval() or other dynamic code execution features such as Spring Expression Language (SpEL).",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -317,7 +317,7 @@
         {
           "id": "V01S03-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Where there is no alternative, any user input being included must be sanitized before being executed.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -332,7 +332,7 @@
         {
           "id": "V01S03-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that data being passed to a potentially dangerous context is sanitized beforehand to enforce safety measures, such as only allowing characters which are safe for this context and trimming input which is too long.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -346,7 +346,7 @@
         {
           "id": "V01S03-005",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that user-supplied Scalable Vector Graphics (SVG) scriptable content is validated or sanitized to contain only tags and attributes (such as draw graphics) that are safe for the application, e.g., do not contain scripts and foreignObject.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -360,7 +360,7 @@
         {
           "id": "V01S03-006",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application sanitizes or disables user-supplied scriptable or expression template language content, such as Markdown, CSS or XSL stylesheets, BBCode, or similar.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -374,7 +374,7 @@
         {
           "id": "V01S03-007",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application protects against Server-side Request Forgery (SSRF) attacks, by validating untrusted data against an allowlist of protocols, domains, paths and ports and sanitizing potentially dangerous characters before using the data to call another service.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -388,7 +388,7 @@
         {
           "id": "V01S03-008",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application protects against template injection attacks by not allowing templates to be built based on untrusted input.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -402,7 +402,7 @@
         {
           "id": "V01S03-009",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Where there is no alternative, any untrusted input being included dynamically during template creation must be sanitized or strictly validated.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -416,7 +416,7 @@
         {
           "id": "V01S03-010",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application appropriately sanitizes untrusted input before use in Java Naming and Directory Interface (JNDI) queries and that JNDI is configured securely to prevent JNDI injection attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -430,7 +430,7 @@
         {
           "id": "V01S03-011",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application sanitizes content before it is sent to memcache to prevent injection attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -444,7 +444,7 @@
         {
           "id": "V01S03-012",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that format strings which might resolve in an unexpected or malicious way when used are sanitized before being processed.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -458,7 +458,7 @@
         {
           "id": "V01S03-013",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application sanitizes user input before passing to mail systems to protect against SMTP or IMAP injection.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -472,7 +472,7 @@
         {
           "id": "V01S03-014",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that regular expressions are free from elements causing exponential backtracking, and ensure untrusted input is sanitized to mitigate ReDoS or Runaway Regex attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -493,15 +493,15 @@
         "parent": "V01"
       },
       "rule_set": {
-        "version": "0.1.3",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:8bc57615e64febb7e8e4902a24ddc918906d7e72e7848534d4d6619c6e0bf600"
+        "version": "0.4.0",
+        "timestamp": "2026-11-12T12:08:40Z",
+        "hash": "blake3:f0e3f95137859f9a960bedfad10cc25727aece03622a4eb2d5b640b25795ed34"
       },
       "rules": [
         {
           "id": "V01S04-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application uses memory-safe string, safer memory copy and pointer arithmetic to detect or prevent stack, buffer, or heap overflows.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -515,7 +515,7 @@
         {
           "id": "V01S04-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that sign, range, and input validation techniques are used to prevent integer overflows.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -529,7 +529,7 @@
         {
           "id": "V01S04-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that dynamically allocated memory and resources are released, and that references or pointers to freed memory are removed or set to null to prevent dangling pointers and use-after-free vulnerabilities.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -551,15 +551,15 @@
         "parent": "V01"
       },
       "rule_set": {
-        "version": "0.1.4",
-        "timestamp": "2026-11-09T11:37:37Z",
-        "hash": "blake3:8317708e8dd7293b18e9d6504d51c86ebdfc2688f93898ae79505b0c41b96d95"
+        "version": "0.5.0",
+        "timestamp": "2026-11-12T12:08:40Z",
+        "hash": "blake3:562d641201f0022cb3e6e152959c86d9261abcea3008525531f55d4a8f1574d1"
       },
       "rules": [
         {
           "id": "V01S05-001",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that the application configures XML parsers to use a restrictive configuration and that unsafe features such as resolving external entities are disabled to prevent XML eXternal Entity (XXE) attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -574,7 +574,7 @@
         {
           "id": "V01S05-002",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that deserialization of untrusted data enforces safe input handling, such as using an allowlist of object types or restricting client-defined object types, to prevent deserialization attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -588,7 +588,7 @@
         {
           "id": "V01S05-003",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Deserialization mechanisms that are explicitly defined as insecure must not be used with untrusted input.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
@@ -602,7 +602,7 @@
         {
           "id": "V01S05-004",
           "revision": 0,
-          "state": "D",
+          "state": "P",
           "body": "Verify that different parsers used in the application for the same data type (e.g., JSON parsers, XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism to avoid issues such as JSON Interoperability vulnerabilities or different URI or file parsing behavior being exploited in Remote File Inclusion (RFI) or Server-side Request Forgery (SSRF) attacks.",
           "added_by": "github:pleberre",
           "added_at": "2026-11-09",
