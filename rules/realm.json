@@ -3,7 +3,7 @@
   "realm": {
     "id": "dev.steerspec.std.owasp.asvs.v5",
     "title": "OWASP ASVS 5.0.0",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "kind": "standard",
     "license": "CC-BY-SA-4.0",
     "attribution": {
@@ -25,5 +25,5 @@
     }
   ],
   "rule_identifier_format": null,
-  "hash": "blake3:47815694c8ab0725a5079eab2c869a57cdf36de40eac424f4aa6cd5a69fef8a7"
+  "hash": "blake3:baa56048da27ea4d4e292af8ce8fc157b055960b1fbd92f309101c4ccf60d4c1"
 }
