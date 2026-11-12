@@ -3,10 +3,9 @@ name: CI
 # Validates and lints the realm, and checks lifecycle transitions, with the
 # released strspc CLI, through SteerSpec/.github's reusable workflow.
 #
-# Not strict yet: core's key-word check (RL021) and its inline-example check
-# (RL026, NTE-020) are written for rules people author, and warn on every rule
-# here because the bodies are the standard's own text. Turn `strict` back on
-# once core exempts Standard Realms from them and strspc lint follows.
+# Strict: warnings fail the build. Rule bodies are the standard's own text, so
+# lint skips the key-word check (RL021) and the inline-example check (RL026)
+# in a realm of kind standard (core STDRLM-020 and STDRLM-021, strspc 1.41.0).
 
 on:
   push:
@@ -28,8 +27,8 @@ jobs:
     with:
       path: rules/
       # Pinned so a CLI release can't change the checks without a change here.
-      cli-version: 1.40.0
-      strict: false
+      cli-version: 1.41.0
+      strict: true
 
   generator:
     runs-on: ubuntu-latest

@@ -36,11 +36,13 @@ The realm follows the core Standard Realm rules (STDRLM) of `dev.steerspec.core`
   reads `Sec-Fetch-*`).
 - To regenerate, delete the entity files under `rules/` (keep `realm.json` and `_schema/`) and run
   `python3 tools/generate.py` with strspc 1.40.0 or later. Once rules are Published, a fix is
-  `strspc rule supersede`, never a regeneration: rule IDs are never reused.
+  `strspc rule supersede`, never a regeneration: rule IDs are never reused. When the new rule is
+  Published, `strspc rule terminate` moves the old one to Terminated in the same change (STDRLM-013).
 - The rules are Published once checked against the source, and never Implemented: a standard is
   measured against, not evaluated against code.
-- Lint isn't strict yet: core's key-word and inline-example checks warn on every rule, because the
-  bodies are the standard's own wording, not rules written for SteerSpec.
+- CI lints in strict mode. The bodies are the standard's own wording, so a Rule body may hold no Key
+  Word and keep its examples (STDRLM-020, STDRLM-021). strspc 1.41.0 and later skip those two
+  checks in a realm of kind standard.
 
 ## Using it
 
